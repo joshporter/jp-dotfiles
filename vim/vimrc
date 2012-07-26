@@ -1,2 +1,69 @@
-" Use Vim settings, rather then Vi settings (much better!).
-set nocompatible
+" =======================================
+" JP .vimrc
+" =======================================
+
+" ----------------------------------------
+" Vundle
+" ----------------------------------------
+
+set nocompatible " be iMproved
+filetype off     " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+Bundle 'gmarik/vundle'
+
+" ---------------
+" Plugin Bundles
+" ---------------
+
+" Navigation
+Bundle 'wincent/Command-T'
+" UI Additions
+Bundle 'mutewinter/vim-indent-guides'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/nerdtree'
+" Commands
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-surround'
+Bundle 'mattn/zencoding-vim'
+" Snippets
+Bundle 'garbas/vim-snipmate'
+"   JavaScript
+Bundle 'pangloss/vim-javascript'
+Bundle 'leshill/vim-json'
+Bundle 'itspriddle/vim-jquery'
+
+filetype plugin indent on  " Automatically detect file types. (must turn on after Vundle)
+
+" Set leader to ,
+" Note: This line MUST come before any <leader> mappings
+let mapleader=","
+
+" ---------------
+" Color
+" ---------------
+syntax enable
+let g:solarized_termtrans = 1
+colorscheme solarized
+" togglebg#map("<F5>") 
+:set background=dark
+
+" ---------------
+" Backups
+" ---------------
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+
+" ---------------
+" UI
+" ---------------
+set ruler          " Ruler on
+set nu             " Line numbers on
+set nowrap         " Line wrapping off
+set laststatus=2   " Always show the statusline
+set cmdheight=2    " Make the command area two lines high
+set encoding=utf-8
